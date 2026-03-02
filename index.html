@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congress Pro — Sistema de Acreditación para Eventos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ============ NAVBAR ============ -->
+    <header class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="https://congresspro.com" class="navbar__logo">
+                <img src="https://congresspro.com/wp-content/uploads/2024/12/logoCP3D.png" alt="Congress Pro" class="navbar__logo-img">
+            </a>
+            <nav class="navbar__menu" id="navMenu">
+                <a href="#hero" class="navbar__link active">Inicio</a>
+                <a href="#about" class="navbar__link">Nosotros</a>
+                <a href="#services" class="navbar__link">Servicios</a>
+                <a href="#why-us" class="navbar__link">¿Por Qué Elegirnos?</a>
+                <a href="#clients" class="navbar__link">Clientes</a>
+                <a href="#contact" class="navbar__link">Contacto</a>
+            </nav>
+            <a href="#contact" class="btn btn--primary navbar__cta">Cotizar Ahora</a>
+            <button class="navbar__toggle" id="navToggle" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============ HERO + FORM ============ -->
+    <section class="hero" id="hero">
+        <div class="hero__bg">
+            <div class="hero__grid-overlay"></div>
+            <div class="hero__gradient"></div>
+        </div>
+        <div class="container hero__inner">
+            <!-- LEFT: Form -->
+            <div class="hero__content">
+                <span class="hero__badge">
+                    <span class="hero__badge-dot"></span>
+                    SISTEMA DE ACREDITACIÓN
+                </span>
+                <h1 class="hero__title">
+                    Acreditación <span class="text-gradient">Rápida y Segura</span> para Eventos
+                </h1>
+                <p class="hero__subtitle">
+                    Tecnología de punta para acreditar asistentes en segundos.
+                </p>
+                <form class="hero__form" id="heroForm">
+                    <div class="hero__form-card">
+                        <h3 class="hero__form-title">Solicita tu Presupuesto</h3>
+                        <p class="hero__form-desc">Completa tus datos y te contactaremos a la brevedad.</p>
+                        <div class="hero__form-fields">
+                            <input type="text" placeholder="Tu nombre completo" required>
+                            <input type="email" placeholder="Tu correo electrónico" required>
+                            <input type="tel" placeholder="Tu teléfono / WhatsApp">
+                            <input type="text" placeholder="Nombre de tu evento">
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full">
+                            Solicitar Presupuesto <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </form>
+                <div class="hero__stats">
+                    <div class="hero__stat">
+                        <div class="hero__stat-value"><span class="hero__stat-number" data-count="500">0</span>+</div>
+                        <span class="hero__stat-label">Eventos</span>
+                    </div>
+                    <div class="hero__stat">
+                        <div class="hero__stat-value"><span class="hero__stat-number" data-count="24">0</span>s</div>
+                        <span class="hero__stat-label">Acreditación</span>
+                    </div>
+                    <div class="hero__stat">
+                        <div class="hero__stat-value"><span class="hero__stat-number" data-count="100">0</span>%</div>
+                        <span class="hero__stat-label">Certificados</span>
+                    </div>
+                </div>
+            </div>
+            <!-- RIGHT: Image -->
+            <div class="hero__visual">
+                <div class="hero__image-wrapper">
+                    <img src="imagenes/niñapng.png" alt="Acreditación Congress Pro" class="hero__image hero__image--person">
+                </div>
+            </div>
+        </div>
+        <div class="hero__scroll-indicator">
+            <span>Scroll</span>
+            <div class="hero__scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ============ ABOUT US — 3 SERVICIOS PRINCIPALES ============ -->
+    <section class="about section--light" id="about">
+        <div class="container">
+            <div class="about__header">
+                <span class="section-tag">Sobre Nosotros</span>
+                <h2 class="section-title">Nuestros <span class="text-gradient">3 Servicios</span> Principales</h2>
+                <p class="section-subtitle">Ofrecemos soluciones integrales de acreditación con tecnología de punta, personal certificado y una experiencia impecable para cada evento.</p>
+            </div>
+            <div class="about__grid">
+                <!-- Card 1 -->
+                <div class="about__card" data-aos="fade-up">
+                    <div class="about__card-icon">
+                        <i class="fa-solid fa-chart-column"></i>
+                    </div>
+                    <div class="about__card-number">01</div>
+                    <h3 class="about__card-title">Control de Asistencia / Estadísticas</h3>
+                    <p class="about__card-text">Monitorea en tiempo real quién asiste a tu evento. Recibe reportes vía WhatsApp durante la acreditación y un informe Excel detallado al finalizar.</p>
+                    <a href="#services" class="about__card-link">
+                        Ver más <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <!-- Card 2 -->
+                <div class="about__card about__card--featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="about__card-icon">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                    <div class="about__card-number">02</div>
+                    <h3 class="about__card-title">Lectura de QR / Carnet</h3>
+                    <p class="about__card-text">Acreditamos a los asistentes en segundos mediante lectura de código QR enviado previamente o lectura directa del Carnet de Identidad.</p>
+                    <a href="#services" class="about__card-link">
+                        Ver más <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <!-- Card 3 -->
+                <div class="about__card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="about__card-icon">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                    <div class="about__card-number">03</div>
+                    <h3 class="about__card-title">Etiquetas y Certificados</h3>
+                    <p class="about__card-text">Imprimimos etiquetas personalizadas con logo, QR, VCard y múltiples colores. Además, certificamos a todo nuestro personal de atención.</p>
+                    <a href="#services" class="about__card-link">
+                        Ver más <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SERVICES DETAIL — SEOX STYLE ============ -->
+    <section class="services-seox section--light" id="services">
+        <div class="container">
+            <!-- Top: Title Left + Image Right -->
+            <div class="services-seox__top">
+                <div class="services-seox__intro">
+                    <span class="section-tag">Nuestros Servicios</span>
+                    <h2 class="section-title section-title--left">Detalle de Nuestros<br><span class="text-gradient">Servicios de Acreditación</span></h2>
+                    <p class="services-seox__desc">En Congress Pro ofrecemos soluciones integrales de acreditación diseñadas para optimizar la gestión de asistentes, aumentar la seguridad y mejorar la experiencia en tus eventos.</p>
+                    <a href="#contact" class="btn btn--primary">Ver Todos los Servicios</a>
+                </div>
+                <div class="services-seox__image">
+                    <img src="https://congresspro.com/wp-content/uploads/2025/01/IMG_9617-1280x960.jpeg" alt="Congress Pro Servicios">
+                </div>
+            </div>
+
+            <!-- Bottom: 6 Cards Grid with Numbers -->
+            <div class="services-seox__grid">
+                <div class="services-seox__card">
+                    <span class="services-seox__number">1</span>
+                    <h4>Montajes Profesionales</h4>
+                    <p>Back Light, Pantalla de Bienvenida, Módulos de acreditación y configuraciones personalizadas para tu evento.</p>
+                </div>
+                <div class="services-seox__card">
+                    <span class="services-seox__number">2</span>
+                    <h4>Etiquetas Personalizadas</h4>
+                    <p>Etiquetas con logo, QR, VCard, múltiples colores. Formato recomendado 10×5 cms para credenciales.</p>
+                </div>
+                <div class="services-seox__card">
+                    <span class="services-seox__number">3</span>
+                    <h4>Control de Asistencia</h4>
+                    <p>Lectura de QR, carnet de identidad, autoacreditación y firma digital para registro preciso.</p>
+                </div>
+                <div class="services-seox__card">
+                    <span class="services-seox__number">4</span>
+                    <h4>Personal Certificado</h4>
+                    <p>Anfitrionas y técnicos certificados en atención al cliente y dominio de nuestras plataformas.</p>
+                </div>
+                <div class="services-seox__card">
+                    <span class="services-seox__number">5</span>
+                    <h4>Informes en Tiempo Real</h4>
+                    <p>Reportes vía WhatsApp durante el evento y planilla Excel detallada al finalizar.</p>
+                </div>
+                <div class="services-seox__card">
+                    <span class="services-seox__number">6</span>
+                    <h4>Servicios Complementarios</h4>
+                    <p>Páginas web, asistente virtual IA, formularios, campañas de mail y WhatsApp marketing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ WHY CHOOSE US (Por qué elegirnos) ============ -->
+    <section class="why-us section--dark" id="why-us">
+        <div class="container">
+            <span class="section-tag">¿Por Qué Elegirnos?</span>
+            <h2 class="section-title">Razones para <span class="text-gradient">Confiar en Nosotros</span></h2>
+            <p class="section-subtitle">Más de una década de experiencia nos respaldan como líderes en acreditación de eventos en Chile y Latinoamérica.</p>
+
+            <div class="why-us__grid">
+                <div class="why-us__card">
+                    <div class="why-us__step">01</div>
+                    <div class="why-us__icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h4>Rapidez Inigualable</h4>
+                    <p>Solo 24 segundos con impresión de etiqueta y 5 segundos sin impresión. Eliminamos filas y esperas.</p>
+                </div>
+                <div class="why-us__card">
+                    <div class="why-us__step">02</div>
+                    <div class="why-us__icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4>Seguridad Garantizada</h4>
+                    <p>Tus datos y los de los asistentes están protegidos. Usamos tecnología encriptada y protocolos seguros.</p>
+                </div>
+                <div class="why-us__card">
+                    <div class="why-us__step">03</div>
+                    <div class="why-us__icon"><i class="fa-solid fa-user-graduate"></i></div>
+                    <h4>Personal Certificado</h4>
+                    <p>Anfitrionas y técnicos certificados en atención al cliente y dominio de nuestras plataformas tecnológicas.</p>
+                </div>
+                <div class="why-us__card">
+                    <div class="why-us__step">04</div>
+                    <div class="why-us__icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h4>Elegancia y Modernidad</h4>
+                    <p>Montajes profesionales, uniformes elegantes y tecnología de punta que elevan la imagen de tu evento.</p>
+                </div>
+                <div class="why-us__card">
+                    <div class="why-us__step">05</div>
+                    <div class="why-us__icon"><i class="fa-solid fa-clock"></i></div>
+                    <h4>Información en Tiempo Real</h4>
+                    <p>Recibe actualizaciones vía WhatsApp durante todo el evento y un informe completo al finalizar.</p>
+                </div>
+                <div class="why-us__card">
+                    <div class="why-us__step">06</div>
+                    <div class="why-us__icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+                    <h4>Soluciones Integrales</h4>
+                    <p>Desde la página web hasta las credenciales inteligentes. Todo lo que necesitas en un solo proveedor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CLIENTS SLIDER ============ -->
+    <section class="clients section--light" id="clients">
+        <div class="container">
+            <span class="section-tag">Nuestros Clientes</span>
+            <h2 class="section-title">Empresas que <span class="text-gradient">Confían en Nosotros</span></h2>
+        </div>
+        <div class="clients__slider">
+            <div class="clients__track">
+                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/BHP-150x150.png" alt="BHP"></div>
+                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/collahuasi-150x150.png" alt="Collahuasi"></div>
+                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/CODELCO-150x150.png" alt="Codelco"></div>
+                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/ENAMI-150x150.png" alt="Enami"></div>
+                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/Anglo-American-150x150.png" alt="Anglo American"></div>
+                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/SONAMI-150x150.png" alt="Sonami"></div>
+                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/SQM-150x150.png" alt="SQM"></div>
+                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/CORFO-150x150.png" alt="Corfo"></div>
+                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/SERNAGEOMIN-150x150.png" alt="Sernageomin"></div>
+                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/ICARE-150x150.png" alt="Icare"></div>
+                <!-- Duplicated for infinite scroll -->
+                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/BHP-150x150.png" alt="BHP"></div>
+                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/collahuasi-150x150.png" alt="Collahuasi"></div>
+                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/CODELCO-150x150.png" alt="Codelco"></div>
+                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/ENAMI-150x150.png" alt="Enami"></div>
+                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/Anglo-American-150x150.png" alt="Anglo American"></div>
+                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/SONAMI-150x150.png" alt="Sonami"></div>
+                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/SQM-150x150.png" alt="SQM"></div>
+                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/CORFO-150x150.png" alt="Corfo"></div>
+                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/SERNAGEOMIN-150x150.png" alt="Sernageomin"></div>
+                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/ICARE-150x150.png" alt="Icare"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT FORM (Second Form) ============ -->
+    <section class="contact section--light" id="contact">
+        <div class="container">
+            <div class="contact__inner">
+                <div class="contact__info">
+                    <span class="section-tag">Contacto</span>
+                    <h2 class="section-title section-title--left">Solicita tu <span class="text-gradient">Presupuesto</span></h2>
+                    <p>Cuéntanos sobre tu evento y te enviaremos una propuesta personalizada a la brevedad.</p>
+                    <div class="contact__details">
+                        <div class="contact__detail">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <a href="mailto:contacto@congresspro.com">contacto@congresspro.com</a>
+                            </div>
+                        </div>
+                        <div class="contact__detail">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <strong>Teléfono</strong>
+                                <a href="tel:56981994771">+56 9 8199 4771</a>
+                            </div>
+                        </div>
+                        <div class="contact__detail">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <a href="https://api.whatsapp.com/send/?phone=56955178774" target="_blank">+56 9 5517 8774</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact__social">
+                        <a href="https://www.linkedin.com/company/congresspro" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/congresspro_oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://vimeo.com/user10743563" target="_blank"><i class="fa-brands fa-vimeo-v"></i></a>
+                    </div>
+                </div>
+                <form class="contact__form" id="contactForm">
+                    <div class="contact__form-row">
+                        <div class="contact__form-group">
+                            <label>Nombre Completo</label>
+                            <input type="text" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="contact__form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="tu@correo.com" required>
+                        </div>
+                    </div>
+                    <div class="contact__form-row">
+                        <div class="contact__form-group">
+                            <label>Teléfono</label>
+                            <input type="tel" placeholder="+56 9 XXXX XXXX">
+                        </div>
+                        <div class="contact__form-group">
+                            <label>Nombre del Evento</label>
+                            <input type="text" placeholder="Ej: Congreso Minero 2026">
+                        </div>
+                    </div>
+                    <div class="contact__form-group contact__form-group--full">
+                        <label>Cantidad Estimada de Asistentes</label>
+                        <select>
+                            <option value="">Seleccionar...</option>
+                            <option>Menos de 100</option>
+                            <option>100 - 500</option>
+                            <option>500 - 1.000</option>
+                            <option>1.000 - 5.000</option>
+                            <option>Más de 5.000</option>
+                        </select>
+                    </div>
+                    <div class="contact__form-group contact__form-group--full">
+                        <label>Mensaje</label>
+                        <textarea rows="4" placeholder="Cuéntanos sobre tu evento..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full">
+                        Enviar Solicitud <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <img src="https://congresspro.com/wp-content/uploads/2024/12/logoCP3D.png" alt="Congress Pro" class="footer__logo">
+                    <p>Tecnología aplicada para tus eventos. Líderes en acreditación para congresos, seminarios, ferias y eventos corporativos.</p>
+                    <div class="footer__social">
+                        <a href="https://www.linkedin.com/company/congresspro" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/congresspro_oficial/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://vimeo.com/user10743563" target="_blank"><i class="fa-brands fa-vimeo-v"></i></a>
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <h4>Menú</h4>
+                    <a href="https://congresspro.com">Inicio</a>
+                    <a href="https://congresspro.com/acreditacion/">Servicios</a>
+                    <a href="https://congresspro.com/clientes/">Clientes</a>
+                    <a href="https://congresspro.com/portafolio/">Portafolio</a>
+                    <a href="#contact">Contacto</a>
+                </div>
+                <div class="footer__col">
+                    <h4>Servicios</h4>
+                    <a href="https://congresspro.com/pagina-web/">Páginas Web</a>
+                    <a href="https://congresspro.com/formulario-de-inscripcion/">Formularios</a>
+                    <a href="https://congresspro.com/mail-marketing/">Mail Marketing</a>
+                    <a href="https://congresspro.com/whatsapp">Campañas WhatsApp</a>
+                    <a href="https://congresspro.com/credenciales-inteligentes/">Credenciales</a>
+                </div>
+                <div class="footer__col">
+                    <h4>Contacto</h4>
+                    <a href="mailto:contacto@congresspro.com"><i class="fa-solid fa-envelope"></i> contacto@congresspro.com</a>
+                    <a href="tel:56981994771"><i class="fa-solid fa-phone"></i> +56 9 8199 4771</a>
+                    <a href="https://api.whatsapp.com/send/?phone=56955178774" target="_blank"><i class="fa-brands fa-whatsapp"></i> +56 9 5517 8774</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 Congress Pro. Todos los derechos reservados.</p>
+                <a href="#hero" class="footer__back-top">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://api.whatsapp.com/send/?phone=56955178774" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
