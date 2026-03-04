@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Congress Pro — Sistema de Acreditación para Eventos</title>
+    <link rel="icon" type="image/png" href="imagenes/favicon-circle.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,14 +17,13 @@
     <header class="navbar" id="navbar">
         <div class="container navbar__inner">
             <a href="https://congresspro.com" class="navbar__logo">
-                <img src="https://congresspro.com/wp-content/uploads/2024/12/logoCP3D.png" alt="Congress Pro" class="navbar__logo-img">
+                <img src="imagenes/favicon-circle.png" alt="Congress Pro" class="navbar__logo-img">
             </a>
             <nav class="navbar__menu" id="navMenu">
                 <a href="#hero" class="navbar__link active">Inicio</a>
                 <a href="#about" class="navbar__link">Nosotros</a>
                 <a href="#services" class="navbar__link">Servicios</a>
                 <a href="#why-us" class="navbar__link">¿Por Qué Elegirnos?</a>
-                <a href="#clients" class="navbar__link">Clientes</a>
                 <a href="#contact" class="navbar__link">Contacto</a>
             </nav>
             <a href="#contact" class="btn btn--primary navbar__cta">Cotizar Ahora</a>
@@ -40,17 +40,17 @@
             <div class="hero__gradient"></div>
         </div>
         <div class="container hero__inner">
-            <!-- LEFT: Form -->
+            <!-- LEFT: Text + Form -->
             <div class="hero__content">
-                <span class="hero__badge">
+                <!--<span class="hero__badge">
                     <span class="hero__badge-dot"></span>
-                    SISTEMA DE ACREDITACIÓN
-                </span>
+                    CONGRESOS Y EVENTOS EN LATAM
+                </span>-->
                 <h1 class="hero__title">
-                    Acreditación <span class="text-gradient">Rápida y Segura</span> para Eventos
+                    Acreditación <span class="text-gradient">Profesional</span> para Congresos y Eventos
                 </h1>
                 <p class="hero__subtitle">
-                    Tecnología de punta para acreditar asistentes en segundos.
+                    Equipo profesional, módulos propios y control permanente desde el primer ingreso.
                 </p>
                 <form class="hero__form" id="heroForm">
                     <div class="hero__form-card">
@@ -80,12 +80,6 @@
                         <div class="hero__stat-value"><span class="hero__stat-number" data-count="100">0</span>%</div>
                         <span class="hero__stat-label">Certificados</span>
                     </div>
-                </div>
-            </div>
-            <!-- RIGHT: Image -->
-            <div class="hero__visual">
-                <div class="hero__image-wrapper">
-                    <img src="imagenes/niñapng.png" alt="Acreditación Congress Pro" class="hero__image hero__image--person">
                 </div>
             </div>
         </div>
@@ -155,8 +149,32 @@
                     <p class="services-seox__desc">En Congress Pro ofrecemos soluciones integrales de acreditación diseñadas para optimizar la gestión de asistentes, aumentar la seguridad y mejorar la experiencia en tus eventos.</p>
                     <a href="#contact" class="btn btn--primary">Ver Todos los Servicios</a>
                 </div>
-                <div class="services-seox__image">
-                    <img src="https://congresspro.com/wp-content/uploads/2025/01/IMG_9617-1280x960.jpeg" alt="Congress Pro Servicios">
+                <div class="services-seox__carousel">
+                    <div class="carousel__container">
+                        <div class="carousel__track">
+                            <div class="carousel__slide active">
+                                <img src="imagenes/NUESTROS-MODULOS.png" alt="Nuestros Módulos">
+                                <span class="carousel__caption">Nuestros Módulos</span>
+                            </div>
+                            <div class="carousel__slide">
+                                <img src="imagenes/SIN-MODULO.png" alt="Sin Módulo">
+                                <span class="carousel__caption">Sin Módulo</span>
+                            </div>
+                            <div class="carousel__slide">
+                                <img src="imagenes/PANTALLA-DE-BIENVENIDA.png" alt="Pantalla de Bienvenida">
+                                <span class="carousel__caption">Pantalla de Bienvenida</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel__controls">
+                        <button class="carousel__btn carousel__btn--prev" aria-label="Anterior">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel__btn carousel__btn--next" aria-label="Siguiente">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="carousel__dots"></div>
                 </div>
             </div>
 
@@ -195,6 +213,76 @@
             </div>
         </div>
     </section>
+
+    <!-- ============ VIDEOS GALLERY ============ -->
+    <section class="videos-gallery section--light" id="videos">
+        <div class="container">
+            <span class="section-tag">Nuestros Servicios</span>
+            <h2 class="section-title">Mira Nuestros <span class="text-gradient">Servicios en Acción</span></h2>
+            <p class="section-subtitle">Descubre cómo Congress Pro revoluciona la acreditación de eventos con tecnología de punta.</p>
+            
+            <div class="videos-gallery__grid">
+                <div class="video-card" data-video="imagenes/acreditacion.mp4">
+                    <div class="video-card__thumbnail">
+                        <video class="video-card__preview" muted loop>
+                            <source src="imagenes/acreditacion.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-card__overlay">
+                            <button class="video-card__play" aria-label="Reproducir video">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <h4 class="video-card__title">Acreditación Profesional</h4>
+                    <p class="video-card__desc">Sistema completo de acreditación con tecnología QR y control de ingreso.</p>
+                </div>
+
+                <div class="video-card" data-video="imagenes/acredqr.mp4">
+                    <div class="video-card__thumbnail">
+                        <video class="video-card__preview" muted loop>
+                            <source src="imagenes/acredqr.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-card__overlay">
+                            <button class="video-card__play" aria-label="Reproducir video">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <h4 class="video-card__title">Sistema QR</h4>
+                    <p class="video-card__desc">Lectura rápida de códigos QR para acreditación instantánea.</p>
+                </div>
+
+                <div class="video-card" data-video="imagenes/espera.mp4">
+                    <div class="video-card__thumbnail">
+                        <video class="video-card__preview" muted loop>
+                            <source src="imagenes/espera.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-card__overlay">
+                            <button class="video-card__play" aria-label="Reproducir video">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <h4 class="video-card__title">Módulos Propios</h4>
+                    <p class="video-card__desc">Equipamiento especializado para gestión de eventos a gran escala.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ VIDEO MODAL ============ -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal__overlay" id="modalOverlay"></div>
+        <div class="video-modal__content">
+            <button class="video-modal__close" id="closeModal" aria-label="Cerrar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <video id="modalVideo" controls>
+                <source src="" type="video/mp4">
+                Tu navegador no soporta videos HTML5.
+            </video>
+        </div>
+    </div>
 
     <!-- ============ WHY CHOOSE US (Por qué elegirnos) ============ -->
     <section class="why-us section--dark" id="why-us">
@@ -244,38 +332,7 @@
         </div>
     </section>
 
-    <!-- ============ CLIENTS SLIDER ============ -->
-    <section class="clients section--light" id="clients">
-        <div class="container">
-            <span class="section-tag">Nuestros Clientes</span>
-            <h2 class="section-title">Empresas que <span class="text-gradient">Confían en Nosotros</span></h2>
-        </div>
-        <div class="clients__slider">
-            <div class="clients__track">
-                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/BHP-150x150.png" alt="BHP"></div>
-                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/collahuasi-150x150.png" alt="Collahuasi"></div>
-                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/CODELCO-150x150.png" alt="Codelco"></div>
-                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/ENAMI-150x150.png" alt="Enami"></div>
-                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/Anglo-American-150x150.png" alt="Anglo American"></div>
-                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/SONAMI-150x150.png" alt="Sonami"></div>
-                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/SQM-150x150.png" alt="SQM"></div>
-                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/CORFO-150x150.png" alt="Corfo"></div>
-                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/SERNAGEOMIN-150x150.png" alt="Sernageomin"></div>
-                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/ICARE-150x150.png" alt="Icare"></div>
-                <!-- Duplicated for infinite scroll -->
-                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/BHP-150x150.png" alt="BHP"></div>
-                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/collahuasi-150x150.png" alt="Collahuasi"></div>
-                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/CODELCO-150x150.png" alt="Codelco"></div>
-                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/ENAMI-150x150.png" alt="Enami"></div>
-                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/Anglo-American-150x150.png" alt="Anglo American"></div>
-                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/SONAMI-150x150.png" alt="Sonami"></div>
-                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/SQM-150x150.png" alt="SQM"></div>
-                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/CORFO-150x150.png" alt="Corfo"></div>
-                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/SERNAGEOMIN-150x150.png" alt="Sernageomin"></div>
-                <div class="clients__slide"><img src="https://congresspro.com/wp-content/uploads/2024/12/ICARE-150x150.png" alt="Icare"></div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- ============ CONTACT FORM (Second Form) ============ -->
     <section class="contact section--light" id="contact">
@@ -358,12 +415,39 @@
         </div>
     </section>
 
+    <!-- ============ FOOTER CTA FORM ============ -->
+    <section class="footer-cta" id="footer-cta">
+        <div class="container">
+            <div class="footer-cta__inner">
+                <div class="footer-cta__text">
+                    <h2 class="footer-cta__title">¿Listo para <span class="text-gradient">tu próximo evento</span>?</h2>
+                    <p class="footer-cta__desc">Déjanos tus datos y un experto te contactará en menos de 24 horas para diseñar la solución perfecta para tu evento.</p>
+                    <div class="footer-cta__features">
+                        <div class="footer-cta__feature"><i class="fa-solid fa-check-circle"></i> Presupuesto sin compromiso</div>
+                        <div class="footer-cta__feature"><i class="fa-solid fa-check-circle"></i> Respuesta en menos de 24hrs</div>
+                        <div class="footer-cta__feature"><i class="fa-solid fa-check-circle"></i> Asesoría personalizada</div>
+                    </div>
+                </div>
+                <form class="footer-cta__form" id="footerCtaForm">
+                    <input type="text" placeholder="Tu nombre completo" required>
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <input type="tel" placeholder="Tu teléfono / WhatsApp">
+                    <input type="text" placeholder="Nombre de tu evento">
+                    <textarea rows="3" placeholder="Cuéntanos brevemente sobre tu evento..."></textarea>
+                    <button type="submit" class="btn btn--primary btn--full">
+                        Solicitar Presupuesto <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- ============ FOOTER ============ -->
     <footer class="footer">
         <div class="container">
             <div class="footer__top">
                 <div class="footer__brand">
-                    <img src="https://congresspro.com/wp-content/uploads/2024/12/logoCP3D.png" alt="Congress Pro" class="footer__logo">
+                    <img src="imagenes/favicon-circle.png" alt="Congress Pro" class="footer__logo">
                     <p>Tecnología aplicada para tus eventos. Líderes en acreditación para congresos, seminarios, ferias y eventos corporativos.</p>
                     <div class="footer__social">
                         <a href="https://www.linkedin.com/company/congresspro" target="_blank"><i class="fa-brands fa-linkedin"></i></a>

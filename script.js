@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ---- Form Submissions (prevent default, show feedback) ----
-    const forms = document.querySelectorAll('#heroForm, #contactForm');
+    const forms = document.querySelectorAll('#heroForm, #contactForm, #footerCtaForm');
 
     forms.forEach(form => {
         form.addEventListener('submit', (e) => {
@@ -204,15 +204,132 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ---- Client slider pause on hover ----
-    const clientTrack = document.querySelector('.clients__track');
-    if (clientTrack) {
-        clientTrack.addEventListener('mouseenter', () => {
-            clientTrack.style.animationPlayState = 'paused';
+
+
+    // ---- Services Carousel ----
+    const carousel = document.querySelector('.services-seox__carousel');
+    if (carousel) {
+        const track = carousel.querySelector('.carousel__track');
+        const slides = carousel.querySelectorAll('.carousel__slide');
+        const prevBtn = carousel.querySelector('.carousel__btn--prev');
+        const nextBtn = carousel.querySelector('.carousel__btn--next');
+        const dotsContainer = carousel.querySelector('.carousel__dots');
+        let currentSlide = 0;
+        let autoPlayInterval;
+
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.classList.add('carousel__dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
         });
-        clientTrack.addEventListener('mouseleave', () => {
-            clientTrack.style.animationPlayState = 'running';
+
+        const dots = dotsContainer.querySelectorAll('.carousel__dot');
+
+        function updateSlide() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+            });
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlide();
+            resetAutoPlay();
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlide();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlide();
+        }
+
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(nextSlide, 4000);
+        }
+
+        function resetAutoPlay() {
+            clearInterval(autoPlayInterval);
+            startAutoPlay();
+        }
+
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoPlay();
         });
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAutoPlay();
+        });
+
+        // Pause on hover
+        carousel.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+        carousel.addEventListener('mouseleave', startAutoPlay);
+
+        startAutoPlay();
     }
+
+    // ---- Videos Gallery / Modal ----
+    const videoCards = document.querySelectorAll('.video-card');
+    const videoModal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const closeBtn = document.getElementById('closeModal');
+
+    videoCards.forEach(card => {
+        const preview = card.querySelector('.video-card__preview');
+        
+        // Play preview on hover
+        card.addEventListener('mouseenter', () => {
+            if (preview) {
+                preview.currentTime = 0;
+                preview.play();
+            }
+        });
+        
+        // Pause preview on leave
+        card.addEventListener('mouseleave', () => {
+            if (preview) {
+                preview.pause();
+                preview.currentTime = 0;
+            }
+        });
+        
+        // Open modal on click
+        card.addEventListener('click', () => {
+            const videoSrc = card.getAttribute('data-video');
+            modalVideo.src = videoSrc;
+            videoModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    function closeModal() {
+        videoModal.classList.remove('active');
+        modalVideo.pause();
+        modalVideo.src = '';
+        document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', closeModal);
+
+    // Close on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+            closeModal();
+        }
+    });
 
 });
