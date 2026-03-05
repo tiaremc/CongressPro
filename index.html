@@ -52,15 +52,19 @@
                 <p class="hero__subtitle">
                     Equipo profesional, módulos propios y control permanente desde el primer ingreso.
                 </p>
-                <form class="hero__form" id="heroForm">
+                <form class="hero__form" id="heroForm" action="https://formsubmit.co/soporte@congresspro.com" method="POST">
+                    <input type="hidden" name="_subject" value="Nueva Solicitud de Presupuesto (Hero)">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://congresspro.com">
                     <div class="hero__form-card">
                         <h3 class="hero__form-title">Solicita tu Presupuesto</h3>
                         <p class="hero__form-desc">Completa tus datos y te contactaremos a la brevedad.</p>
                         <div class="hero__form-fields">
-                            <input type="text" placeholder="Tu nombre completo" required>
-                            <input type="email" placeholder="Tu correo electrónico" required>
-                            <input type="tel" placeholder="Tu teléfono / WhatsApp">
-                            <input type="text" placeholder="Nombre de tu evento">
+                            <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+                            <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                            <input type="tel" name="telefono" placeholder="Tu teléfono / WhatsApp">
+                            <input type="text" name="evento" placeholder="Nombre de tu evento">
                         </div>
                         <button type="submit" class="btn btn--primary btn--full">
                             Solicitar Presupuesto <i class="fa-solid fa-arrow-right"></i>
@@ -371,30 +375,34 @@
                         <a href="https://vimeo.com/user10743563" target="_blank"><i class="fa-brands fa-vimeo-v"></i></a>
                     </div>
                 </div>
-                <form class="contact__form" id="contactForm">
+                <form class="contact__form" id="contactForm" action="https://formsubmit.co/soporte@congresspro.com" method="POST">
+                    <input type="hidden" name="_subject" value="Nueva Solicitud de Contacto">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://congresspro.com">
                     <div class="contact__form-row">
                         <div class="contact__form-group">
                             <label>Nombre Completo</label>
-                            <input type="text" placeholder="Tu nombre" required>
+                            <input type="text" name="nombre" placeholder="Tu nombre" required>
                         </div>
                         <div class="contact__form-group">
                             <label>Email</label>
-                            <input type="email" placeholder="tu@correo.com" required>
+                            <input type="email" name="email" placeholder="tu@correo.com" required>
                         </div>
                     </div>
                     <div class="contact__form-row">
                         <div class="contact__form-group">
                             <label>Teléfono</label>
-                            <input type="tel" placeholder="+56 9 XXXX XXXX">
+                            <input type="tel" name="telefono" placeholder="+56 9 XXXX XXXX">
                         </div>
                         <div class="contact__form-group">
                             <label>Nombre del Evento</label>
-                            <input type="text" placeholder="Ej: Congreso Minero 2026">
+                            <input type="text" name="evento" placeholder="Ej: Congreso Minero 2026">
                         </div>
                     </div>
                     <div class="contact__form-group contact__form-group--full">
                         <label>Cantidad Estimada de Asistentes</label>
-                        <select>
+                        <select name="asistentes">
                             <option value="">Seleccionar...</option>
                             <option>Menos de 100</option>
                             <option>100 - 500</option>
@@ -405,7 +413,7 @@
                     </div>
                     <div class="contact__form-group contact__form-group--full">
                         <label>Mensaje</label>
-                        <textarea rows="4" placeholder="Cuéntanos sobre tu evento..."></textarea>
+                        <textarea name="mensaje" rows="4" placeholder="Cuéntanos sobre tu evento..."></textarea>
                     </div>
                     <button type="submit" class="btn btn--primary btn--full">
                         Enviar Solicitud <i class="fa-solid fa-paper-plane"></i>
@@ -428,12 +436,16 @@
                         <div class="footer-cta__feature"><i class="fa-solid fa-check-circle"></i> Asesoría personalizada</div>
                     </div>
                 </div>
-                <form class="footer-cta__form" id="footerCtaForm">
-                    <input type="text" placeholder="Tu nombre completo" required>
-                    <input type="email" placeholder="Tu correo electrónico" required>
-                    <input type="tel" placeholder="Tu teléfono / WhatsApp">
-                    <input type="text" placeholder="Nombre de tu evento">
-                    <textarea rows="3" placeholder="Cuéntanos brevemente sobre tu evento..."></textarea>
+                <form class="footer-cta__form" id="footerCtaForm" action="https://formsubmit.co/soporte@congresspro.com" method="POST">
+                    <input type="hidden" name="_subject" value="Nueva Solicitud de Presupuesto (Footer)">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://congresspro.com">
+                    <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+                    <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                    <input type="tel" name="telefono" placeholder="Tu teléfono / WhatsApp">
+                    <input type="text" name="evento" placeholder="Nombre de tu evento">
+                    <textarea name="mensaje" rows="3" placeholder="Cuéntanos brevemente sobre tu evento..."></textarea>
                     <button type="submit" class="btn btn--primary btn--full">
                         Solicitar Presupuesto <i class="fa-solid fa-paper-plane"></i>
                     </button>

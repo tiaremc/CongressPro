@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
         containerObserver.observe(container);
     });
 
-    // ---- Form Submissions (prevent default, show feedback) ----
+    // ---- Form Submissions (FormSubmit.co via AJAX) ----
     const forms = document.querySelectorAll('#heroForm, #contactForm, #footerCtaForm');
 
     forms.forEach(form => {
@@ -167,16 +167,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const btn = form.querySelector('button[type="submit"]');
             const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fa-solid fa-check"></i> ¡Enviado!';
-            btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
             btn.disabled = true;
 
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.style.background = '';
-                btn.disabled = false;
-                form.reset();
-            }, 3000);
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => {
+                if (response.ok) {
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> ¡Enviado!';
+                    btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+                    form.reset();
+                } else {
+                    btn.innerHTML = '<i class="fa-solid fa-xmark"></i> Error, intenta de nuevo';
+                    btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+                }
+            })
+            .catch(() => {
+                btn.innerHTML = '<i class="fa-solid fa-xmark"></i> Error, intenta de nuevo';
+                btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+            })
+            .finally(() => {
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 3000);
+            });
         });
     });
 
@@ -289,6 +310,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     videoCards.forEach(card => {
         const preview = card.querySelector('.video-card__preview');
+        const videoSrc = card.getAttribute('data-video');
+        const startTime = videoSrc.includes('acredqr') ? 0.5 : 0;
+
+        // Set initial frame for paused state
+        if (preview && startTime > 0) {
+            preview.currentTime = startTime;
+        }
         
         // Play preview on hover
         card.addEventListener('mouseenter', () => {
@@ -302,7 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.addEventListener('mouseleave', () => {
             if (preview) {
                 preview.pause();
-                preview.currentTime = 0;
+                preview.currentTime = startTime;
             }
         });
         
