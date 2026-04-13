@@ -54,17 +54,51 @@
                 </p>
                 <form class="hero__form" id="heroForm" action="https://formsubmit.co/soporte@congresspro.com" method="POST">
                     <input type="hidden" name="_subject" value="Nueva Solicitud de Presupuesto (Hero)">
+                    <input type="hidden" name="_cc" value="miramarperformance@gmail.com">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="https://congresspro.com">
+                    <input type="hidden" name="_next" value="https://acreditacion.congresspro.com/thankyou.html">
                     <div class="hero__form-card">
                         <h3 class="hero__form-title">Solicita tu Presupuesto</h3>
                         <p class="hero__form-desc">Completa tus datos y te contactaremos a la brevedad.</p>
                         <div class="hero__form-fields">
-                            <input type="text" name="nombre" placeholder="Tu nombre completo" required>
-                            <input type="email" name="email" placeholder="Tu correo electrónico" required>
-                            <input type="tel" name="telefono" placeholder="Tu teléfono / WhatsApp">
-                            <input type="text" name="evento" placeholder="Nombre de tu evento">
+                            <input type="text" name="nombre" placeholder="Nombre y Apellido" required>
+                            <input type="email" name="email" placeholder="Correo electrónico" required>
+                            <div class="phone-input-wrapper">
+                                <span class="phone-prefix">+56</span>
+                                <input type="tel" name="telefono" class="phone-input" placeholder="9 XXXX XXXX" maxlength="9" pattern="9[0-9]{8}" title="Ingresa un número chileno válido (9 dígitos comenzando con 9)" required>
+                            </div>
+                            <input type="text" name="detalles_evento" placeholder="Detalles de tu evento">
+                            <div class="form-radio-group">
+                                <label class="form-radio-group__label">¿Cómo quieres que te contactemos?</label>
+                                <div class="form-radio-group__options">
+                                    <label class="form-radio-pill">
+                                        <input type="radio" name="contacto_via_hero" value="WhatsApp" required>
+                                        <span><i class="fa-brands fa-whatsapp"></i> WhatsApp</span>
+                                    </label>
+                                    <label class="form-radio-pill">
+                                        <input type="radio" name="contacto_via_hero" value="Llamado telefónico">
+                                        <span><i class="fa-solid fa-phone"></i> Llamado telefónico</span>
+                                    </label>
+                                    <label class="form-radio-pill">
+                                        <input type="radio" name="contacto_via_hero" value="Correo electrónico">
+                                        <span><i class="fa-solid fa-envelope"></i> Correo electrónico</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-radio-group">
+                                <label class="form-radio-group__label">¿Cuándo quieres que te contactemos?</label>
+                                <div class="form-radio-group__options">
+                                    <label class="form-radio-pill">
+                                        <input type="radio" name="contacto_cuando_hero" value="Ahora mismo" required>
+                                        <span><i class="fa-solid fa-bolt"></i> Ahora mismo</span>
+                                    </label>
+                                    <label class="form-radio-pill">
+                                        <input type="radio" name="contacto_cuando_hero" value="Durante la semana en horario hábil">
+                                        <span><i class="fa-solid fa-calendar-week"></i> Durante la semana en horario hábil</span>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                         <button type="submit" class="btn btn--primary btn--full">
                             Solicitar Presupuesto <i class="fa-solid fa-arrow-right"></i>
@@ -78,7 +112,7 @@
                     </div>
                     <div class="hero__stat">
                         <div class="hero__stat-value"><span class="hero__stat-number" data-count="24">0</span>s</div>
-                        <span class="hero__stat-label">Acreditación</span>
+                        <span class="hero__stat-label">Por Persona</span>
                     </div>
                     <div class="hero__stat">
                         <div class="hero__stat-value"><span class="hero__stat-number" data-count="100">0</span>%</div>
@@ -88,7 +122,6 @@
             </div>
         </div>
         <div class="hero__scroll-indicator">
-            <span>Scroll</span>
             <div class="hero__scroll-line"></div>
         </div>
     </section>
@@ -377,43 +410,62 @@
                 </div>
                 <form class="contact__form" id="contactForm" action="https://formsubmit.co/soporte@congresspro.com" method="POST">
                     <input type="hidden" name="_subject" value="Nueva Solicitud de Contacto">
+                    <input type="hidden" name="_cc" value="miramarperformance@gmail.com">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="https://congresspro.com">
+                    <input type="hidden" name="_next" value="https://acreditacion.congresspro.com/thankyou.html">
                     <div class="contact__form-row">
                         <div class="contact__form-group">
-                            <label>Nombre Completo</label>
-                            <input type="text" name="nombre" placeholder="Tu nombre" required>
+                            <label>Nombre y Apellido</label>
+                            <input type="text" name="nombre" placeholder="Tu nombre y apellido" required>
                         </div>
                         <div class="contact__form-group">
-                            <label>Email</label>
+                            <label>Correo Electrónico</label>
                             <input type="email" name="email" placeholder="tu@correo.com" required>
                         </div>
                     </div>
                     <div class="contact__form-row">
                         <div class="contact__form-group">
                             <label>Teléfono</label>
-                            <input type="tel" name="telefono" placeholder="+56 9 XXXX XXXX">
+                            <div class="phone-input-wrapper">
+                                <span class="phone-prefix">+56</span>
+                                <input type="tel" name="telefono" class="phone-input" placeholder="9 XXXX XXXX" maxlength="9" pattern="9[0-9]{8}" title="Ingresa un número chileno válido (9 dígitos comenzando con 9)" required>
+                            </div>
                         </div>
                         <div class="contact__form-group">
-                            <label>Nombre del Evento</label>
-                            <input type="text" name="evento" placeholder="Ej: Congreso Minero 2026">
+                            <label>Detalles de tu Evento</label>
+                            <input type="text" name="detalles_evento" placeholder="Cuéntanos sobre tu evento">
                         </div>
                     </div>
                     <div class="contact__form-group contact__form-group--full">
-                        <label>Cantidad Estimada de Asistentes</label>
-                        <select name="asistentes">
-                            <option value="">Seleccionar...</option>
-                            <option>Menos de 100</option>
-                            <option>100 - 500</option>
-                            <option>500 - 1.000</option>
-                            <option>1.000 - 5.000</option>
-                            <option>Más de 5.000</option>
-                        </select>
+                        <label>¿Cómo quieres que te contactemos?</label>
+                        <div class="form-radio-group__options">
+                            <label class="form-radio-pill">
+                                <input type="radio" name="contacto_via" value="WhatsApp" required>
+                                <span><i class="fa-brands fa-whatsapp"></i> WhatsApp</span>
+                            </label>
+                            <label class="form-radio-pill">
+                                <input type="radio" name="contacto_via" value="Llamado telefónico">
+                                <span><i class="fa-solid fa-phone"></i> Llamado telefónico</span>
+                            </label>
+                            <label class="form-radio-pill">
+                                <input type="radio" name="contacto_via" value="Correo electrónico">
+                                <span><i class="fa-solid fa-envelope"></i> Correo electrónico</span>
+                            </label>
+                        </div>
                     </div>
                     <div class="contact__form-group contact__form-group--full">
-                        <label>Mensaje</label>
-                        <textarea name="mensaje" rows="4" placeholder="Cuéntanos sobre tu evento..."></textarea>
+                        <label>¿Cuándo quieres que te contactemos?</label>
+                        <div class="form-radio-group__options">
+                            <label class="form-radio-pill">
+                                <input type="radio" name="contacto_cuando" value="Ahora mismo" required>
+                                <span><i class="fa-solid fa-bolt"></i> Ahora mismo</span>
+                            </label>
+                            <label class="form-radio-pill">
+                                <input type="radio" name="contacto_cuando" value="Durante la semana en horario hábil">
+                                <span><i class="fa-solid fa-calendar-week"></i> Durante la semana en horario hábil</span>
+                            </label>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn--primary btn--full">
                         Enviar Solicitud <i class="fa-solid fa-paper-plane"></i>
@@ -438,14 +490,47 @@
                 </div>
                 <form class="footer-cta__form" id="footerCtaForm" action="https://formsubmit.co/soporte@congresspro.com" method="POST">
                     <input type="hidden" name="_subject" value="Nueva Solicitud de Presupuesto (Footer)">
+                    <input type="hidden" name="_cc" value="miramarperformance@gmail.com">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="https://congresspro.com">
-                    <input type="text" name="nombre" placeholder="Tu nombre completo" required>
-                    <input type="email" name="email" placeholder="Tu correo electrónico" required>
-                    <input type="tel" name="telefono" placeholder="Tu teléfono / WhatsApp">
-                    <input type="text" name="evento" placeholder="Nombre de tu evento">
-                    <textarea name="mensaje" rows="3" placeholder="Cuéntanos brevemente sobre tu evento..."></textarea>
+                    <input type="hidden" name="_next" value="https://acreditacion.congresspro.com/thankyou.html">
+                    <input type="text" name="nombre" placeholder="Nombre y Apellido" required>
+                    <input type="email" name="email" placeholder="Correo electrónico" required>
+                    <div class="phone-input-wrapper">
+                        <span class="phone-prefix">+56</span>
+                        <input type="tel" name="telefono" class="phone-input" placeholder="9 XXXX XXXX" maxlength="9" pattern="9[0-9]{8}" title="Ingresa un número chileno válido (9 dígitos comenzando con 9)" required>
+                    </div>
+                    <input type="text" name="detalles_evento" placeholder="Detalles de tu evento">
+                    <div class="form-radio-group form-radio-group--dark">
+                        <label class="form-radio-group__label">¿Cómo quieres que te contactemos?</label>
+                        <div class="form-radio-group__options">
+                            <label class="form-radio-pill">
+                                <input type="radio" name="contacto_via_footer" value="WhatsApp" required>
+                                <span><i class="fa-brands fa-whatsapp"></i> WhatsApp</span>
+                            </label>
+                            <label class="form-radio-pill">
+                                <input type="radio" name="contacto_via_footer" value="Llamado telefónico">
+                                <span><i class="fa-solid fa-phone"></i> Llamado telefónico</span>
+                            </label>
+                            <label class="form-radio-pill">
+                                <input type="radio" name="contacto_via_footer" value="Correo electrónico">
+                                <span><i class="fa-solid fa-envelope"></i> Correo electrónico</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-radio-group form-radio-group--dark">
+                        <label class="form-radio-group__label">¿Cuándo quieres que te contactemos?</label>
+                        <div class="form-radio-group__options">
+                            <label class="form-radio-pill">
+                                <input type="radio" name="contacto_cuando_footer" value="Ahora mismo" required>
+                                <span><i class="fa-solid fa-bolt"></i> Ahora mismo</span>
+                            </label>
+                            <label class="form-radio-pill">
+                                <input type="radio" name="contacto_cuando_footer" value="Durante la semana en horario hábil">
+                                <span><i class="fa-solid fa-calendar-week"></i> Durante la semana en horario hábil</span>
+                            </label>
+                        </div>
+                    </div>
                     <button type="submit" class="btn btn--primary btn--full">
                         Solicitar Presupuesto <i class="fa-solid fa-paper-plane"></i>
                     </button>
@@ -492,6 +577,13 @@
             </div>
             <div class="footer__bottom">
                 <p>&copy; 2026 Congress Pro. Todos los derechos reservados.</p>
+                <div class="footer__miramar">
+                    Desarrollado en Viña del Mar, Chile por
+                    <a href="https://agenciamiramar.cl" target="_blank" class="footer__miramar-link">
+                        <img src="imagenes/MiramarPerformanceLogo (1).png" alt="Agencia Miramar" class="footer__miramar-logo">
+                        Agencia Miramar
+                    </a>
+                </div>
                 <a href="#hero" class="footer__back-top">
                     <i class="fa-solid fa-arrow-up"></i>
                 </a>

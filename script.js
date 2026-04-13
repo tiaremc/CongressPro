@@ -158,6 +158,53 @@ document.addEventListener('DOMContentLoaded', () => {
         containerObserver.observe(container);
     });
 
+    // ---- Chilean Phone Number Validation (+56 9 XXXX XXXX) ----
+    document.querySelectorAll('.phone-input').forEach(input => {
+        // Only allow digits
+        input.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+
+            // Force first digit to be 9
+            if (value.length > 0 && value[0] !== '9') {
+                value = '9' + value.substring(1);
+            }
+
+            // Limit to 9 digits
+            value = value.substring(0, 9);
+            e.target.value = value;
+
+            // Visual feedback
+            const wrapper = input.closest('.phone-input-wrapper');
+            if (value.length === 9 && value[0] === '9') {
+                wrapper.classList.remove('invalid');
+                wrapper.classList.add('valid');
+            } else if (value.length > 0) {
+                wrapper.classList.remove('valid');
+                wrapper.classList.add('invalid');
+            } else {
+                wrapper.classList.remove('valid', 'invalid');
+            }
+        });
+
+        // Block non-numeric keys
+        input.addEventListener('keydown', (e) => {
+            if (['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) return;
+            if (e.ctrlKey || e.metaKey) return;
+            if (!/^\d$/.test(e.key)) e.preventDefault();
+        });
+
+        // Block paste of non-numeric content
+        input.addEventListener('paste', (e) => {
+            e.preventDefault();
+            const pasted = (e.clipboardData || window.clipboardData).getData('text').replace(/\D/g, '');
+            const current = input.value;
+            let combined = (current + pasted).replace(/\D/g, '');
+            if (combined.length > 0 && combined[0] !== '9') combined = '9' + combined.substring(1);
+            input.value = combined.substring(0, 9);
+            input.dispatchEvent(new Event('input'));
+        });
+    });
+
     // ---- Form Submissions (FormSubmit.co via AJAX) ----
     const forms = document.querySelectorAll('#heroForm, #contactForm, #footerCtaForm');
 
@@ -165,12 +212,33 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
+            // Validate Chilean phone number
+            const phoneInput = form.querySelector('.phone-input');
+            if (phoneInput) {
+                const phoneValue = phoneInput.value.replace(/\D/g, '');
+                if (phoneValue.length !== 9 || phoneValue[0] !== '9') {
+                    const wrapper = phoneInput.closest('.phone-input-wrapper');
+                    wrapper.classList.add('invalid', 'shake');
+                    phoneInput.focus();
+                    setTimeout(() => wrapper.classList.remove('shake'), 600);
+                    return;
+                }
+            }
+
             const btn = form.querySelector('button[type="submit"]');
             const originalText = btn.innerHTML;
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
             btn.disabled = true;
 
             const formData = new FormData(form);
+
+            // Remove _next so FormSubmit returns JSON instead of redirecting (avoids CORS)
+            formData.delete('_next');
+
+            // Prepend +56 to the phone number
+            if (phoneInput) {
+                formData.set('telefono', '+56 ' + phoneInput.value);
+            }
 
             fetch(form.action, {
                 method: 'POST',
@@ -182,6 +250,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.innerHTML = '<i class="fa-solid fa-check"></i> ¡Enviado!';
                     btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
                     form.reset();
+
+                    // Redirect to thank you page
+                    setTimeout(() => {
+                        window.location.href = 'thankyou.html';
+                    }, 800);
                 } else {
                     btn.innerHTML = '<i class="fa-solid fa-xmark"></i> Error, intenta de nuevo';
                     btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
